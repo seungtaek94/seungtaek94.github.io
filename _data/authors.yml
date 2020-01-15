@@ -58,7 +58,7 @@ isme2n:
     # stumbleupon:     <username>
     # paypal:          <username>
     email:           mailto:seungtaek.kim.94@gmail.com
-    # rss:             https://seungtaek94.github.io/feed.xml
+    rss:             https://seungtaek94.github.io/feed.xml
 
 # Another author
 mdo:
