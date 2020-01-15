@@ -2,8 +2,8 @@
 layout: post
 title:  "[Google Extends I/O] Material Design & Sprint, Machine Learning"
 subtitle:   "Material Design & Sprint, Machine Learning"
-categories: review
-tags: event
+categories: test
+tags: test
 
 ---
 
