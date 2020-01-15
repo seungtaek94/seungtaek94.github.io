@@ -4,5 +4,7 @@ title: Python
 slug: python
 category: programing
 menu: false
-order: 1
+order: 3
+description: >
+  파이썬 언어 관련 포스트
 ---
