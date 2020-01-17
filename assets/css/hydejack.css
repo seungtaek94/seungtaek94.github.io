@@ -257,8 +257,5 @@ input[type="checkbox"]:checked ~ ul{
 img + em {
   display: block;
   text-align: center;
-}
-
-em {
-  margin-bottom: 50;
+  margin-bottom: 50px;
 }
