@@ -23,12 +23,12 @@ comments: true
 
   다른 기존의 방법(그림1. (a), (b))은 Feature Map의 Resolution을 높이기 위해 Upsampling을 이용하고 다른 Block에 Convolution Parameter를 연결한다. 그와 다르게 본 논문에서는 Upsampling과 Convolution Parameter를 Deconvolution Layer 안에 합쳤다. 따라서  Skip Connection을 이용하는 다른 기존의 방법에 비해 High Resolution Feature Map을 생성하는 방법이 명료하다.
 
- 본 네트워크와 기존의 다른 방법들과의 공통점은 High resolution Feauture Map과 Heatmap을 얻기 위하여 3단계의 Upsampling과 3단계의 비-선형성을 이용한다. 이러한 관찰을 통해, "_High resolution Feautre Map을 얻는 것은 중요하나, 어떻게 얻는지는 상관 없다"_는 사실을 알 수있다(간단하면 간단할수록 이득이다).
+ 본 네트워크와 기존의 다른 방법들과의 공통점은 High resolution Feauture Map과 Heatmap을 얻기 위하여 3단계의 Upsampling과 3단계의 비-선형성을 이용한다. 이러한 관찰을 통해, <span style="color:red"><I>"High resolution Feautre Map을 얻는 것은 중요하나, 어떻게 얻는지는 상관 없다"</I></span>는 사실을 알 수있다(간단하면 간단할수록 이득이다).
 
  \*Deconvolution Layer: 이 논문에서 저자들은 Deconvolution이라는 용어를 사용하고 있지만 실제 일어나는 연산은 Transposed Convolution 연산이다. [이곳](https://datascience.stackexchange.com/questions/6107/what-are-deconvolutional-layers)에서 정확한 설명과 이유를 알 수 있다.
 
 ## 결과
 
-![](/assets/img/2020-01-17-16-46-52.png){: width="728" height="294"}*그림 2. COCO 2017 val2017  dataset에 대한 결과*
+![](/assets/img/2020-01-17-16-46-52.png){: width="728" height="294"}*그림 2. COCO 2017 val2017  dataset에 대한 결과*<br>
 
  위 그림 2. 는 COCO 2017 validation set에 대한 실험결과이다. 위의 실험을 통해 정확도에 가장 큰 영향을 미치는 변수는 입력 이미지의 크기 임을 알수 있고, Deconvoltuion 레이어의 Kernel 크기는 큰것이 좋으나 차이는 미비 함을 알 수 있다. 당연하게도 좀더 깊은 레이어를 가진 Backbone 네트워크를 사용했을때 유리하며 Deoconvolution 레이어의 깊이 또한 깊을 수록 정확도도 높아짐을 알 수 있다.
