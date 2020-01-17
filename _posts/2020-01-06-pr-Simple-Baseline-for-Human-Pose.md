@@ -15,7 +15,7 @@ comments: true
 
 ## 방법
 
-![](/assets/img/2020-01-17-16-43-56.png)*그림1. Pose Estimation을 위한 기존 네트워크 및 본 논문에서 제안한 (c) Simple Baseline 네트워크*
+![](/assets/img/2020-01-17-16-43-56.png)*그림1. Pose Estimation을 위한 기존 네트워크 및 본 논문에서 제안한 (c) Simple Baseline 네트워크*<br>
 
  본 논문에서는 ResNet의 마지막 Convolution layer에 \*Deconvolution layer(논문에서는 $$C_5$$라 함)을 추가한 아주 간단한 형태의 네트워크를 제안한다. 본 논문에서 제안한 네트워크의 구조는 그림1.의 (c)와 같다. 기본적으로 네트워크는 3개의 Deconvolution Layer가 존재하며 각각의 Layer는 Batch Normalization과 Relu를 이용한다. 또한 각 Layer는 256 Filters, 4x4 kernel(Stride=2)의 형태를 가지며 마지막 레이어의 끝에서 1x1 Convolution연산을 통해  $$k$$개의 Keypoints를 위한 예측된  Heatmap $${H_1,...,H_k}$$를 생성한다. loss 함수로는 Mean Squared Error(MSE)를 사용한다.
 
