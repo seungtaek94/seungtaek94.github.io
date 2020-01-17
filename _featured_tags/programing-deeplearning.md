@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
 title: Deep Learning
-slug: sl
+slug: dl
 category: programing
 menu: false
 order: 1
