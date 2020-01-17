@@ -3,13 +3,10 @@ layout: post
 title: '[PR] Simple Baselines for Human Pose Estimation and Tracking'
 subtitle: ''
 categories: pr
-#tags: deeplearning
 comments: true
 ---
-# Paper
-
-**Simple Baselines for Human Pose Estimation Tracking**
-
+> ## **Simple Baselines for Human Pose Estimation Tracking**
+>
 > Xiao, Bin, Haiping Wu, and Yichen Wei. "Simple baselines for human pose estimation and tracking."_Proceedings of the European Conference on Computer Vision (ECCV)_. 2018.
 
 ## 문제 정의
