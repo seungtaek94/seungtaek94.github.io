@@ -15,7 +15,7 @@ comments: true
 
 ## 방법
 
-![](/assets/img/2020-01-17-16-43-56.png)*그림1. Pose Estimation을 위한 기존 네트워크 및 본 논문에서 제안한 (c) Simple Baseline 네트워크*<br>
+![](/assets/img/2020-01-17-16-43-56.png)*그림1. Pose Estimation을 위한 기존 네트워크 및 본 논문에서 제안한 (c) Simple Baseline 네트워크*
 
  본 논문에서는 ResNet의 마지막 Convolution layer에 \*Deconvolution layer(논문에서는 $$C_5$$라 함)을 추가한 아주 간단한 형태의 네트워크를 제안한다. 본 논문에서 제안한 네트워크의 구조는 그림1.의 (c)와 같다. 기본적으로 네트워크는 3개의 Deconvolution Layer가 존재하며 각각의 Layer는 Batch Normalization과 Relu를 이용한다. 또한 각 Layer는 256 Filters, 4x4 kernel(Stride=2)의 형태를 가지며 마지막 레이어의 끝에서 1x1 Convolution연산을 통해  $$k$$개의 Keypoints를 위한 예측된  Heatmap $${H_1,...,H_k}$$를 생성한다. loss 함수로는 Mean Squared Error(MSE)를 사용한다.
 
@@ -29,6 +29,6 @@ comments: true
 
 ## 결과
 
-![](/assets/img/2020-01-17-16-46-52.png){: width="728" height="294"}*그림 2. COCO 2017 val2017  dataset에 대한 결과*<br>
+![](/assets/img/2020-01-17-16-46-52.png){: width="728" height="294"}*그림 2. COCO 2017 val2017  dataset에 대한 결과*
 
  위 그림 2. 는 COCO 2017 validation set에 대한 실험결과이다. 위의 실험을 통해 정확도에 가장 큰 영향을 미치는 변수는 입력 이미지의 크기 임을 알수 있고, Deconvoltuion 레이어의 Kernel 크기는 큰것이 좋으나 차이는 미비 함을 알 수 있다. 당연하게도 좀더 깊은 레이어를 가진 Backbone 네트워크를 사용했을때 유리하며 Deoconvolution 레이어의 깊이 또한 깊을 수록 정확도도 높아짐을 알 수 있다.
