@@ -27,9 +27,9 @@ comments: true
 
 ## Output Size
 
-$$ Output Size = {{input size - filter size + (2*padding)} \over {Stride}} + 1 $$
+$$ Output_Size = {{input_size - filter_size + (2*padding)} \over {Stride}} + 1 $$
 
 Convolution 연산에 의한 Output의 크기는 위의 공식을 통해 계산할 수 있다. 
 
 >## Reference
-> [1] 모두를 위한 딥러닝 시즌2 - PyTorch, [https://www.edwith.org/boostcourse-dl-pytorch/joinLectures/22155](https://www.edwith.org/boostcourse-dl-pytorch/joinLectures/22155)
+> [1] [모두를 위한 딥러닝 시즌2 - PyTorch](https://www.edwith.org/boostcourse-dl-pytorch/joinLectures/22155)
