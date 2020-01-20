@@ -6,7 +6,7 @@ categories: programing
 tags: dl
 comments: true
 ---
- ## Contents
+## Contents
 
 -   Gradient Vanishing / Exploding
 -   Internal Covariate Shift
@@ -36,7 +36,7 @@ comments: true
 
 ![](/assets/img/2020-01-20-09-09-48.png){: width="463" height="375"}*그림 4. 논문에 나온 수식을 이용한 설명*
 
- 위의 그림 4. 의 수식을 이용해 더 자세히 설명을 해보자면 각 배치의 평균과 Variance를 계산하고 해당 값을 이용해 Normalization을 해준다. 이때 $$\epsilon$$은 Normalization을 할때 나누는 과정에서 0이 나누어지는 것을 막기 위해 아주 작은 수이다. 이렇게 Normalized 된 결과 $$\hat{x}\_i$$에 $$\gamma$$를 곱하고 $$\beta$$를 더해준다. 이 과정이 필요한 이유는 각 Batch마다 계속해서 Normlization을 하게 되면 Activation Function의 Nonlinearity와 같은 성질을 잃게 되기 때문에 $$\gamma$$를 곱하고 Shift($$\beta$$)를 더해주는 과정을 통해 이러한 문제를 완화한다. 이때 $$\gamma$$와 $$\beta$$는 네트워크에 의해 학습되는 Trainable 한 파라미터이다.
+ 위의 그림 4. 의 수식을 이용해 더 자세히 설명을 해보자면 각 배치의 평균과 Variance를 계산하고 해당 값을 이용해 Normalization을 해준다. 이때 $$\epsilon$$은 Normalization을 할때 나누는 과정에서 0이 나누어지는 것을 막기 위해 아주 작은 수이다. 이렇게 Normalized 된 결과 $$\hat{x}_i$$에 $$\gamma$$를 곱하고 $$\beta$$를 더해준다. 이 과정이 필요한 이유는 각 Batch마다 계속해서 Normlization을 하게 되면 Activation Function의 Nonlinearity와 같은 성질을 잃게 되기 때문에 $$\gamma$$를 곱하고 Shift($$\beta$$)를 더해주는 과정을 통해 이러한 문제를 완화한다. 이때 $$\gamma$$와 $$\beta$$는 네트워크에 의해 학습되는 Trainable 한 파라미터이다.
 
 >## Reference
 > [1] [모두를 위한 딥러닝 시즌2 - PyTorch](https://www.edwith.org/boostcourse-dl-pytorch/joinLectures/22155)
