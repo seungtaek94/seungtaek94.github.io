@@ -5,7 +5,7 @@ subtitle: ''
 categories: pr
 comments: true
 ---
-> ## **Deep High-Resolution Representation for Human Pose Estimation**
+## **Deep High-Resolution Representation for Human Pose Estimation**
 >
 > Sun, Ke, et al. "Deep high-resolution representation learning for human pose estimation." arXiv preprint arXiv:1902.09212 (2019).
 
