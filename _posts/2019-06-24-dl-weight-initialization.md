@@ -52,13 +52,13 @@ $$W \backsim U(-\sqrt{6 \over {n\_{in}+n\_{out}}}, +\sqrt{6 \over {n\_{in}+n\_{o
 
 $$W \backsim N(0,Var(W))$$
 
-$$Var(W) = \sqrt{2 \over n\_{in}}$$
+$$Var(W) = \sqrt{2 \over n_{in}}$$
 
 -   He Uniform initialization
 
-$$ W \backsim U (-\sqrt{6 \over {n\_{in}}}, + \sqrt{6 \over {n\_{in}}})$$
+$$ W \backsim U (-\sqrt{6 \over {n_{in}}}, + \sqrt{6 \over {n_{in}}})$$
 
-\*$$n\_{in}$$: Layer의 Input 수, $$n\_{out}$$: Layer의 Output 수
+\*$$n_{in}$$: Layer의 Input 수, $$n_{out}$$: Layer의 Output 수
 
 >## Reference
 > [1] [모두를 위한 딥러닝 시즌2 - PyTorch](https://www.edwith.org/boostcourse-dl-pytorch/joinLectures/22155)
