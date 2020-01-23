@@ -124,6 +124,7 @@
 
 .markdown-body .highlight {
   margin-bottom: 16px;
+  margin-left: 20px;
 }
 
 .markdown-body .highlight pre,
@@ -149,7 +150,7 @@
   display: inline;
   max-width: initial;
   padding: 0;
-  margin-left: 20px;
+  margin-left: 0px;
   overflow: initial;
   line-height: inherit;
   word-wrap: normal;
