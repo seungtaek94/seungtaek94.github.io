@@ -262,5 +262,7 @@ img + em {
 }
 
 .code-title{
-  border-left: 10px solid red;
+  padding-left: 10px;
+  border-left: 5px solid #287EC9;
+  background-color: #dcdcdc;
 }
