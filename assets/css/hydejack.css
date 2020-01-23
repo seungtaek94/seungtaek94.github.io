@@ -262,5 +262,5 @@ img + em {
 }
 
 .code-title{
-  border-left: thick solid #E53A40;
+  border-left: 10px solid red;
 }
