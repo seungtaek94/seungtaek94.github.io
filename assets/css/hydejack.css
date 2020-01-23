@@ -123,8 +123,7 @@
 }
 
 .markdown-body .highlight {
-  margin-bottom: 16px;
-  margin-left: 20px;
+  margin: 16px 10px 16px 10px;
 }
 
 .markdown-body .highlight pre,
