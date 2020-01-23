@@ -18,6 +18,7 @@ comments: true
 
 > NOTE: `torch.empty()`를 이용해 Tensor를 생성하게 되면 현재 할당된 메모리에 존재하던 값들이 초기값으로 결정된다.
 
+Example:
 ```python
 x = torch.empty(3, 4)
 print(x)
@@ -37,6 +38,7 @@ tensor([[2.5226e-18, 6.4825e-10, 1.0072e-11, 7.7195e-10],
 
 > NOTE: `torch.rand()`를 이용해 랜덤으로 초기화된 Tensor를 생성한다.
 
+Example:
 ```
 x = torch.rand(3, 4)
 print(x)
@@ -56,3 +58,6 @@ tensor([[0.3018, 0.1164, 0.9890, 0.7646],
 <div class="code-title">
 import torch
 </div>
+
+---
+# 작성중....
