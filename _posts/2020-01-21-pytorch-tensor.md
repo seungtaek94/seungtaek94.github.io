@@ -38,6 +38,6 @@ tensor([[0.3018, 0.1164, 0.9890, 0.7646],
 ---
  ## Permute(dim$$1$$, dim$$2$$, ...,  dim$$n$$)
 
-```
+<span class="code-title">
 import torch
-```
+</span>

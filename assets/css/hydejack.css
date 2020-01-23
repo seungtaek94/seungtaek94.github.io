@@ -260,3 +260,7 @@ img + em {
   text-align: center;
   margin-bottom: 30px;
 }
+
+.code-title{
+  border-left: thick solid #E53A40;
+}
