@@ -265,5 +265,6 @@ img + em {
   padding-left: 12px;
   border-left: 4px solid #287EC9;
   background-color: #F6F7F6;
-  font-size: 20px;
+  font-size: 16px;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }

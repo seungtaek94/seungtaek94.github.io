@@ -12,6 +12,9 @@ comments: true
 &nbsp;&nbsp;텐서는 다차원 배열을 처리기위한 Pytorh의 가장 기본이 되는 데이터형이다. 잘 알려진  *Numpy*의 ndarray와 비슷하며 CPU 및 GPU를 이용한 계산이 가능하다.
  
 ## Tensor의 생성 방법
+<div class="code-title">
+    torch.tensor()
+</div>
 ```python
 x = torch.empty(3, 4)
 print(x)
