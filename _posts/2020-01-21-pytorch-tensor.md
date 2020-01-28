@@ -100,6 +100,7 @@ Out:
 torch.Size([3, 4])
 ```
 <br>
+
 ---
 
 ## Tensor의 연산(Operations)
@@ -147,7 +148,7 @@ tensor([[1.1332, 0.6195, 1.2721, 0.5993],
 ```
 <br>
 
-numpy와 같은 인덱싱 표기 방법을 사용할 수도 있다.
+* numpy와 같은 인덱싱 표기 방법을 사용할 수도 있다.
 
 Example2 :
 ```python
