@@ -199,6 +199,31 @@ torch.Size([4, 4]) torch.Size([16]) torch.Size([1, 16]) torch.Size([4, 4])
 ```
 <br>
 
+<div class="code-title">
+    torch.cat(tensor, dim=0, out=None)
+</div>
+
+> NOTE: `torch.cat()`은 복수의 Tensor를 결합하는데 쓰인다.
+
+Example :
+```python
+a = torch.ones(2, 3)
+b = torch.zeros(2, 3)
+
+print(torch.cat((a, b, a), dim=0))
+print(torch.cat((a, b, a), dim=1))
+```
+Out :
+```
+tensor([[1., 1., 1.],
+        [1., 1., 1.],
+        [0., 0., 0.],
+        [0., 0., 0.],
+        [1., 1., 1.],
+        [1., 1., 1.]])
+tensor([[1., 1., 1., 0., 0., 0., 1., 1., 1.],
+        [1., 1., 1., 0., 0., 0., 1., 1., 1.]])
+```
 ---
 # 작성중....
 
