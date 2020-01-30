@@ -210,8 +210,11 @@ Example :
 a = torch.ones(2, 3)
 b = torch.zeros(2, 3)
 
-print(torch.cat((a, b, a), dim=0))
-print(torch.cat((a, b, a), dim=1))
+x = torch.cat((a, b, a), dim=0)
+y = torch.cat((a, b, a), dim=1)
+
+print(x, x.size())
+print(y, y.size())
 ```
 Out :
 ```
@@ -220,9 +223,9 @@ tensor([[1., 1., 1.],
         [0., 0., 0.],
         [0., 0., 0.],
         [1., 1., 1.],
-        [1., 1., 1.]])
+        [1., 1., 1.]]) torch.Size([6, 3])
 tensor([[1., 1., 1., 0., 0., 0., 1., 1., 1.],
-        [1., 1., 1., 0., 0., 0., 1., 1., 1.]])
+        [1., 1., 1., 0., 0., 0., 1., 1., 1.]]) torch.Size([2, 9])
 ```
 ---
 # 작성중....
