@@ -126,7 +126,7 @@ tensor([[[[  1.,   4.,  11.,  14.],
           [ -9.,  -9.,  10.,   8.]]]])
 ```
 
-> Note: `unsqueeze()` 혹은  `view()`등의 방법을 이용해 커널과 입력의 차원을 늘려주는 이유는 기본적으로 `pytorch`는 입력을 `mini-batch`로만 받는다. 따라서 모든 입력은 $$N, C, H, W(N: batch-size, C: Channels, H: Height, W: Width)$$의 형식을 따라야한다.
+> Note: `unsqueeze()` 혹은  `view()`등의 방법을 이용해 커널과 입력의 차원을 늘려주는 이유는 기본적으로 `pytorch`는 입력을 `mini-batch`로만 받는다. 따라서 모든 입력은 $$[N, C, H, W](N: batch\_size, C: Channels, H: Height, W: Width)$$의 형식을 따라야한다.
 
 <br>
 
