@@ -23,6 +23,8 @@ comments: true
 
  &nbsp;&nbsp;`Transposed Convolution` 연산을 이용하면 학습가능한 파라메터로 인하여 보간 방법을 이용하지 않고 Up-sampling이 가능하다.
 
+<br>
+
 ### Convolution
 
 ![](/assets/img/2020-01-31-11-21-36.png){: width="" height=""}*그림 2. Convolution 연산의 예*
@@ -58,6 +60,7 @@ tensor([[[[ 3.,  2.,  9.],
 tensor([[[[26., 39.],
           [78., 91.]]]])
 ```
+<br>
 
 ### Convolution matrix
 
@@ -69,8 +72,63 @@ tensor([[[[26., 39.],
 
 &nbsp;&nbsp; 위의 그림 4.에서 각 열은 그림 2.에서의 각각 4번의 Convolution 연산을 뜻합니다. 행렬 연산을 위해 그림2. 의 입력을 16x1의 벡터로 펴준다.
 
-![](/assets/img/2020-01-31-11-46-19.png){: width="180" height="380"}*그림 5. 입력 matrix 변환*
+![](/assets/img/2020-01-31-11-46-19.png){: width="234" height="494"}*그림 5. 입력 matrix 변환*
 
-그 후, 행렬 곱 연산을 하게되면 4x16 * 16x1 하게 되면 출력은 다음 그림 6.과 같이 4x1 행렬이 될것 임을 알수 있다.
+&nbsp;&nbsp;그 후, 행렬 곱 연산을 하게되면 `4`x16 * 16x`1` 하게 되면 출력은 다음 그림 6.과 같이 `4x1` 행렬이 될것 임을 알수 있다. 이를 `Reshape` 하면 2x2 행렬로 나타낼 수 있다.
 
 ![](/assets/img/2020-01-31-11-52-50.png){: width="" height=""}*그림 6. Convolution 연산을 행렬곱으로 나타낸 예시*
+
+<br>
+
+### Transposed Convolution Matrix
+
+ &nbsp;&nbsp;이제 Up-sampling을 위한 Tansposed Convolution 연산에 대해 살펴본다. 위에서는 컨볼루션 연산을 행렬곱 연산으로 나타내보 았다. 마찬가지로 Transposed Convolution도 행렵곱 연산으로 나타낼 수 있다. 예를 들어 4(2x2)의 입력을 16(4x4) 크기로 Up-smapling을 하되, 입력과 출력의 지역적인 관계가 유지되길 원한다면 다음 그림 7.과 같이 Transposed Convolution을 이용해 입력 크기를 키울수 있다.
+
+![](/assets/img/2020-02-01-14-43-45.png){: width="" height=""}*그림 7. Transposed Convolution 연산을 행렬곱으로 나타낸 예시*
+
+ &nbsp;&nbsp;4(2x2)의 입력을 Transposed Convolution을 이용해 Up-sampling 하고 싶다면, 우선 입력을 펼쳐(Flatten) 4(`4`x1)의 크기로 만든다(그림 7.의 연두색). 그런다음 우리는 16(4x4)의 크기의 출력을 얻고 싶기 때문에 16(`16`x1)의 크기를 출력으로 얻어야하므로 Transposed 연산의 크기는 `16x4`가 되어야 한다. 그림 7.과 같이 16(16x1) 크기의 출력을 얻었다면 `Reshape`하여  아래 그림 8. 처럼 Up-sampling된 16(4x4) 크기의 출력을 얻을 수 있다.
+
+ > Note: 실제 프레임워크에서는 Convolution 연산은 행렬곱 연산으로 변환되 계산되지 않을 수 있다.
+
+<br>
+`Pytorch`를 이용하면 아래와 같이 간단하게 Transposed Convolution 연산을 이용해 Up-smapling을 해 볼수 있다.
+
+```python
+conv_filter = torch.Tensor([[1, 2, 7], [-2, 1, 0], [-3, 1, 2]])
+conv_filter = conv_filter.view(1, 1, 3, 3).repeat(1, 1, 1, 1)
+print('Conv Filter: ')
+print(conv_filter)
+
+input = torch.Tensor([[1, 2], [3, 4]])
+input = input.view(1, 1, 2, 2).repeat(1, 1, 1, 1)
+print('Input: ')
+print(input)
+
+
+out = F.conv_transpose2d(input, conv_filter)
+print('Up-Sampled: ')
+print(out)
+```
+
+Out:
+```
+Conv Filter: 
+tensor([[[[ 1.,  2.,  7.],
+          [-2.,  1.,  0.],
+          [-3.,  1.,  2.]]]])
+Input: 
+tensor([[[[1., 2.],
+          [3., 4.]]]])
+Up-Sampled: 
+tensor([[[[  1.,   4.,  11.,  14.],
+          [  1.,   7.,  31.,  28.],
+          [ -9., -10.,   8.,   4.],
+          [ -9.,  -9.,  10.,   8.]]]])
+```
+
+> Note: `unsqueeze()` 혹은  `view()`등의 방법을 이용해 커널과 입력의 차원을 늘려주는 이유는 기본적으로 `pytorch`는 입력을 `mini-batch`로만 받는다. 따라서 모든 입력은 `$$N, C, H, W(N: batch-size, C: Channels, H: Height, W: Width)$$`의 형식을 따라야한다.
+
+<br>
+
+## Reference
+> https://medium.com/activating-robotic-minds/up-sampling-with-transposed-convolution-9ae4f2df52d0
