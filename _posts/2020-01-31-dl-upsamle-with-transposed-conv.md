@@ -86,7 +86,7 @@ tensor([[[[26., 39.],
 
 ![](/assets/img/2020-02-01-14-43-45.png){: width="" height=""}*그림 7. Transposed Convolution 연산을 행렬곱으로 나타낸 예시*
 
- &nbsp;&nbsp;4(2x2)의 입력을 Transposed Convolution을 이용해 Up-sampling 하고 싶다면, 우선 입력을 펼쳐(Flatten) 4(`4`x1)의 크기로 만든다(그림 7.의 연두색). 그런다음 우리는 16(4x4)의 크기의 출력을 얻고 싶기 때문에 16(`16`x1)의 크기를 출력으로 얻어야하므로 Transposed 연산의 크기는 `16x4`가 되어야 한다. 그림 7.과 같이 16(16x1) 크기의 출력을 얻었다면 `Reshape`하여  아래 그림 8. 처럼 Up-sampling된 16(4x4) 크기의 출력을 얻을 수 있다.
+ &nbsp;&nbsp;4(2x2)의 입력을 Transposed Convolution을 이용해 Up-sampling 하고 싶다면, 우선 입력을 펼쳐(Flatten) 4(`4`x1)의 크기로 만든다(그림 7.의 연두색). 그런다음 우리는 16(4x4)의 크기의 출력을 얻고 싶기 때문에 16(`16`x1)의 크기를 출력으로 얻어야하므로 Transposed 연산의 크기는 `16x4`가 되어야 한다. 그림 7.과 같이 16(16x1) 크기의 출력을 얻었다면 `Reshape`하여  아래 그림 7. 처럼 Up-sampling된 16(4x4) 크기의 출력을 얻을 수 있다.
 
  > Note: 실제 프레임워크에서는 Convolution 연산은 행렬곱 연산으로 변환되 계산되지 않을 수 있다.
 
