@@ -7,6 +7,8 @@ tags: python
 comments: true
 ---
 
+## String 관련 함수 정리
+
 <div class="code-title">
     upper()
 </div>
