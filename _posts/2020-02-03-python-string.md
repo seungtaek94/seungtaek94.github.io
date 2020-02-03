@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ''
-subtitle: '[Python] String(문자열) 관련'
+title: '[Python] String(문자열) 관련'
+subtitle: ''
 categories: programing
 tags: python
 comments: true

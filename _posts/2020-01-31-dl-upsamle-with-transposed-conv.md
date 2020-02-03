@@ -3,7 +3,7 @@ layout: post
 title: '[ML/DL] Transposed Convolution 연산을 이용한 Up-sampling'
 subtitle: ''
 categories: programing
-tags: dl, Convolution, Pytorch, Up-sampling
+tags: dl
 comments: true
 ---
  
@@ -131,4 +131,4 @@ tensor([[[[  1.,   4.,  11.,  14.],
 <br>
 
 ## Reference
-> https://medium.com/activating-robotic-minds/up-sampling-with-transposed-convolution-9ae4f2df52d0
+> [https://medium.com/activating-robotic-minds/up-sampling-with-transposed-convolution-9ae4f2df52d0]
