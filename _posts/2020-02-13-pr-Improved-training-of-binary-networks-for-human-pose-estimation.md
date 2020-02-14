@@ -39,15 +39,29 @@ comments: true
 
 ## 방법
 
- 자성중..
+![](/assets/img/2020-02-14-08-58-21.png){: width="" height=""}*그림 1. 이진화된 CNN을 위해 설계된 Residual blocks*
+
+### Baseline
+
+ 저자들은 [3]의 구조를 저자들의 제안 방법의 개선에 대한 Baseline으로서 사용하였다. [3]은 HourGlass 구조과 이진 CNN을 위한 새로 설계된 잔차 블록(Residual block)을 결합한다(그림 1.). 네트워크는 다음과 같이 [4]에 설명된 접근 방식을 사용해 이진화되었다:
+
+ && T\ *\ W  \approx (sgn(T) \circledast sgn(W))K\alpha &&
+
 
 ## 결과
 
  contents
 
 ## Reference
->[1]&nbsp;M. Courbariaux, Y. Bengio, and J.-P. David. Binaryconnect:
+>[1] M. Courbariaux, Y. Bengio, and J.-P. David. Binaryconnect:
 Training deep neural networks with binary weights during
 propagations. In NIPS, 2015
 >
->[2]&nbsp;G. Hinton, O. Vinyals, and J. Dean. Distilling the knowledge in a neural network. arXiv preprint arXiv:1503.02531, 2015.
+>[2] G. Hinton, O. Vinyals, and J. Dean. Distilling the knowledge in a neural network. arXiv preprint arXiv:1503.02531, 2015.
+>
+>[3] A. Bulat and G. Tzimiropoulos. Binarized convolutional
+landmark localizers for human pose estimation and face
+alignment with limited resources. In ICCV, 2017.
+>
+>[4] M. Rastegari, V. Ordonez, J. Redmon, and A. Farhadi. Xnornet:
+Imagenet classification using binary convolutional neural networks. In ECCV, 2016.
