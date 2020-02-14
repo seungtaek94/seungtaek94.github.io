@@ -80,13 +80,13 @@ $$T$$는 입력 tensor, $$W$$는 레이어들의 가중치 tensor,  $$K$$는 모
 
 #### *Sigmoid:*
 
-$$ \sgn(x) \approx 2\left(e^{\lambda x} \over {1+e^{\lambda x}} \right)-1 $$
+$$ \sgn \left(x \right) \approx 2\left(e^{\lambda x} \over {1+e^{\lambda x}} \right)-1 $$
 
 $$ {d \over dx}2\left({e^{\lambda x} \over 1+e^{\lambda x}} \right)-1 = {2\lambda e^{\lambda x} \over {\left(e^{\lambda x}+1 \right)^2}}$$
 
 #### *SoftSign:*
 
-$$ \sgn(x) \approx {\lambda x \over 1 + \lambda \left\vert x \right\vert}$$
+$$ \sgn \left(x\right) \approx {\lambda x \over 1 + \lambda \left\vert x \right\vert}$$
 
 #### *Tanh:*
 
