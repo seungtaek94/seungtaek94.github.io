@@ -45,7 +45,7 @@ comments: true
 
  저자들은 [3]의 구조를 저자들의 제안 방법의 개선에 대한 Baseline으로서 사용하였다. [3]은 HourGlass 구조과 이진 CNN을 위한 새로 설계된 잔차 블록(Residual block)을 결합한다(그림 1.). 네트워크는 다음과 같이 [4]에 설명된 접근 방식을 사용해 이진화되었다:
 
- && T\ *\ W  \approx (sgn(T) \circledast sgn(W))K\alpha &&
+ $$ T\ *\ W  \approx (sgn(T) \circledast sgn(W))K\alpha $$
 
 
 ## 결과
