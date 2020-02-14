@@ -78,20 +78,23 @@ $$T$$는 입력 tensor, $$W$$는 레이어들의 가중치 tensor,  $$K$$는 모
  
 &nbsp;&nbsp;다음은 $$\mathrm{sgn}(x)$$ 에 근사하기 위한 몇가지 옵션입니다:
 
-#### *Sigmoid:*
+#### **Sigmoid:**
 
 $$ \mathrm{sgn}(x) \approx 2\left(e^{\lambda x} \over {1+e^{\lambda x}} \right)-1 $$
 
 $$ {d \over dx}2\left({e^{\lambda x} \over 1+e^{\lambda x}} \right)-1 = {2\lambda e^{\lambda x} \over {\left(e^{\lambda x}+1 \right)^2}}$$
 
-#### *SoftSign:*
+#### **SoftSign:**
 
 $$ \mathrm{sgn}(x) \approx {\lambda x \over 1 + \lambda \left\vert x \right\vert}$$
 
 $$ {d \over dx}{\lambda x \over 1 + \lambda \left\vert x \right\vert} = {\lambda \over \left(1+\lambda \left\vert x \right\vert \right)^2}$$
 
-#### *Tanh:*
+#### **Tanh:**
 
+$$ \mathrm{sgn}(x) \approx \mathrm{tanh}(\lambda x)$$
+
+$$ {d \over dx}\mathrm{tanh}(\lambda x) = \lambda\left(1 - \mathrm{tanh}^2(\lambda x)\right)$$
 
 ## 결과
 
