@@ -81,7 +81,7 @@ $$T$$는 입력 tensor, $$W$$는 레이어들의 가중치 tensor,  $$K$$는 모
 
 $$ sgn(x) \approx 2\left(e^{\lambda x} \over {1+e^{\lambda x}} \right)-1 $$
 
-$$ {{dx \over d} 2 \left(e^{\lambda x} \over {1+e^{\lambda x}} \right)-1} = {{2\lambda e^{\lambda x}} \over {\left(e^{\lambda x}+1 \right)^2}} $$
+$$ {d \over dx} 2 \left({e^{\lambda x} \over {1+e^{\lambda x}}} \right)-1 = {{2\lambda e^{\lambda x}} \over {\left(e^{\lambda x}+1 \right)^2}} $$
 
 #### SoftSign:
 
