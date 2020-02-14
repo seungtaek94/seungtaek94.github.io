@@ -58,7 +58,7 @@ $$T$$는 입력 tensor, $$W$$는 레이어들의 가중치 tensor,  $$K$$는 모
 &nbsp;&nbsp;저자들이 제안한 방법에는 두가지 전제 조건이 있다. 우선 $$\mathrm{sgn}$$ 함수를 이용하여 filter 및 features가 나타낼수 잇는 상태를 {-1, 1}로 제한한다(이진화 과정).
 따라서, 네트워크의 표현은이 두 가지 상태에 있으며, 각 컨볼루션 레이어마다 ReLU를 사용하여 훈련하는 동안  이들 중 하나를 제거하면 불안정해 진다. (그림 2. 참조) 두번째로 이 불안정성은 부호 함수의 구현이 0에서 "Leaky(누설)"되어 원치 않는 불완전한 상태를 야기하고 다음의 반복에서 두 상태 사이에서 쉽게 건너 뛸 수 있는 사실로 인해 더욱 증폭된다. 그림
 
-![](/assets/img/2020-02-14-11-55-01.png){: width="" height=""}*그림 3. 네트워크 진행에 따른(왼쪽에서 오른쪽 그림) PReLU(첫번째 행) 및 ReLU(두 번째 행)을 사용한 계층에 대한 가중치 분포
+![](/assets/img/2020-02-14-11-55-01.png){: width="" height=""}*그림 3. 네트워크 진행에 따른(왼쪽에서 오른쪽 그림) PReLU(첫번째 행) 및 ReLU(두 번째 행)을 사용한 계층에 대한 가중치 분포*
 
 &nbsp;&nbsp;위의 그림3.에서 보여 주듯이 ReLU는 네트워크가 진행함에 따라 가중치를 0에 더 깝갑게 하기 때문에 상태간의 점프 가능성을 높이며 불안정성을 띈다. 반면에, PReLU는 네트워크가 진행 함에도 불구하고 안정적인 분포를 보인다. 따라서 저자들은 PReLU의 사용이 네트워크의 표현력을 높이는 효과를 가지며 위에서 언급한 불안정성을 제거할수 있다고 결론지엇다.
 
@@ -76,27 +76,27 @@ $$T$$는 입력 tensor, $$W$$는 레이어들의 가중치 tensor,  $$K$$는 모
 
 &nbsp;&nbsp;대신 이 연구에서 저자는 추정 오차가 $$\lambda$$에 의해 제어되는 것이 아니라 $$\mathrm{sgn}(x)$$을 근사화 하도록 하는 다른 방법을 따른다. 이는 학습과정중에 점차적으로 증가 함으로써 점진적인 이진화를 달성한다. 이것은 이진화가 될 가중치의 선택이 암시적으로 발생하는 자연스럽고 부드러운 전이를 야기하고 양자화된 가중치의 양을 증가시키기 위해 고정된 스케쥴링을 정의할 필요 없이 람다를 변화 시킴으로써 쉽게 제어할 수 있다.
 
- ![](/assets/img/2020-02-14-18-00-20.png){: width="" height=""}*그림 4. 양자화 근사함수(첫번째 행) 및 그것의 파생물(두번째 행) $$\lambda = \{1, 5, 25, 625, 65536\} $$*
+ ![](/assets/img/2020-02-14-18-00-20.png){: width="" height=""}*그림 5. 양자화 근사함수(첫번째 행) 및 그것의 파생물(두번째 행) $$\lambda = \{1, 5, 25, 625, 65536\} $$*
 
 &nbsp;&nbsp;다음은 $$\mathrm{sgn}(x)$$ 에 근사하기 위한 몇가지 옵션입니다:
 
 #### **Sigmoid:**
 
-$$ \mathrm{sgn}(x) \approx 2\left(e^{\lambda x} \over {1+e^{\lambda x}} \right)-1 $$
+    $$ \mathrm{sgn}(x) \approx 2\left(e^{\lambda x} \over {1+e^{\lambda x}} \right)-1 $$
 
-$$ {d \over dx}2\left({e^{\lambda x} \over 1+e^{\lambda x}} \right)-1 = {2\lambda e^{\lambda x} \over {\left(e^{\lambda x}+1 \right)^2}}$$
+    $$ {d \over dx}2\left({e^{\lambda x} \over 1+e^{\lambda x}} \right)-1 = {2\lambda e^{\lambda x} \over {\left(e^{\lambda x}+1 \right)^2}}$$
 
 #### **SoftSign:**
 
-$$ \mathrm{sgn}(x) \approx {\lambda x \over 1 + \lambda \left\vert x \right\vert}$$
+    $$ \mathrm{sgn}(x) \approx {\lambda x \over 1 + \lambda \left\vert x \right\vert}$$
 
-$$ {d \over dx}{\lambda x \over 1 + \lambda \left\vert x \right\vert} = {\lambda \over \left(1+\lambda \left\vert x \right\vert \right)^2}$$
+    $$ {d \over dx}{\lambda x \over 1 + \lambda \left\vert x \right\vert} = {\lambda \over \left(1+\lambda \left\vert x \right\vert \right)^2}$$
 
 #### **Tanh:**
 
-$$ \mathrm{sgn}(x) \approx \mathrm{tanh}(\lambda x)$$
+    $$ \mathrm{sgn}(x) \approx \mathrm{tanh}(\lambda x)$$
 
-$$ {d \over dx}\mathrm{tanh}(\lambda x) = \lambda\left(1 - \mathrm{tanh}^2(\lambda x)\right)$$
+    $$ {d \over dx}\mathrm{tanh}(\lambda x) = \lambda\left(1 - \mathrm{tanh}^2(\lambda x)\right)$$
 
 ## 결과
 
