@@ -85,7 +85,6 @@ $$ {d \over dx}2\left({e^{\lambda x} \over 1+e^{\lambda x}} \right)-1 = {{2\lamb
 
 $$ {d \over dx}2\left({e^{\lambda x} \over 1+e^{\lambda x}} \right)-1 = {2\lambda e^{\lambda x} \over {\left(e^{\lambda x}+1 \right)^2}}$$
 
-$$ {{d \over dx}2\left({e^{\lambda x} \over 1+e^{\lambda x}} \right)-1} = {2\lambda e^{\lambda x} \over {\left(e^{\lambda x}+1 \right)^2}}$$
 
 #### SoftSign:
 
