@@ -88,6 +88,8 @@ $$ {d \over dx}2\left({e^{\lambda x} \over 1+e^{\lambda x}} \right)-1 = {2\lambd
 
 $$ \mathrm{sgn}(x) \approx {\lambda x \over 1 + \lambda \left\vert x \right\vert}$$
 
+$$ {d \over dx}{\lambda x \over 1 + \lambda \left\vert x \right\vert} = {\lambda \over \left(1+\lambda \left\vert x \right\vert \right)^2}$$
+
 #### *Tanh:*
 
 
