@@ -79,7 +79,8 @@ $$T$$는 입력 tensor, $$W$$는 레이어들의 가중치 tensor,  $$K$$는 모
 &nbsp;&nbsp;다음은 $$sgn(x)$$ 에 근사하기 위한 몇가지 옵션입니다:
 #### Sigmoid:
 
-$$ sgn(x) \approx 2\left(e^{\lambda x} \over {1+e^{\lambda x}} \right)$$
+$$ sgn(x) \approx 2\left(e^{\lambda x} \over {1+e^{\lambda x}} \right)-1$$
+$$ {\operatorname{d}\!x} \over {\operatorname{d}}2\left(e^{\lambda x} \over {1+e^{\lambda x}} \right)-1 = {2\labda e^{\lambda x}} \over {\left(e^{lambda x}+1 \right)^2} $$
 
 #### SoftSign:
 
