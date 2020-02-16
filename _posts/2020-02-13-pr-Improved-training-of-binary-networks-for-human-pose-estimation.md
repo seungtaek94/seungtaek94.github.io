@@ -106,10 +106,30 @@ $$ {d \over dx}\mathrm{tanh}(\lambda x) = \lambda\left(1 - \mathrm{tanh}^2(\lamb
 
 &nbsp;&nbsp;저자들은 실험을 통해 모든 근사 함수가 비슷하게 동작하는것을 발겨하였고 그중 $$t\mathrm{tanh}(x)$$가 가장 높은 성능을 얻는다는 것을 확인했다. 따라서 저자들의 최종적인 결과는 $$t\mathrm{tanh}(x)$$를 이용하여 얻었다. 학습하는 동안 저자들은 $$\lambda$$의 값을 $$2^0$$에서 시작하여 $$2^16$$으로 점진적으로 증가시켜 실험하였다.
 
+### Stacked Binary Network
+
+&nbsp;&nbsp;HourGlass 네트워크 스택을 사용하면 네트워크의 예측을 단계적으로 구체화하여 사람의 자세 추정 정확도를 크게 향상시킬 수 있다. 비슷한 방식으로, 본 연구에서는 이진 HourGlass 네트워크를 스택 구성하여 이전 하위 섹션에서 소개된 개선 사항을 통합했다. 저자들의 방법은 네트워크의 스택을 결합하는데 사용되는 모든 중간레이어도 이진화한다는 점에서 [5]에 소개된 방법과는 다르다.
+
+## Human Pose Estimation
+
+ 저자들은 인간 자세 추정 데이터셋을 위한 가장 어려운 데이터셋 중 하나인 MPII를 이용해 저자들의 방법에 대한 결과를 실험적으로 평가하였다. MPII는 약 25,000개의 이미지와 최대 16개의 키포인트가 레이블 된 4만명 이상의 사람이 포함되어 있다. 저자들은 PCKh metric[6]을 이용하여 성능향상을 평가한다.
 
 ## 결과
 
- contents
+![](/assets/img/2020-02-16-16-35-59.png){: width="" height=""}*테이블 1. MPII 데이터세트에 대한 제안 방법 평가*
+
+
+> NOTE: 표의 [3]은 실제 본논문에 나온 레퍼런스(HourGlass)이다. 본 포스트의 레퍼런스의 순서와 다르다.
+>> 표에 표시된 각 섹션 번호에 해당하는 내용은 다음과 같다.
+>> - 3.2 Leaky non-linearities
+>> - 3.3 Reverse-order initialization
+>> - 3.4 Progressive binarization
+>> - 3.6 Binarization plus distillation
+
+![](/assets/img/2020-02-16-16-43-10.png){: width="" height=""}*테이블 2. 스택 개수에 따른 성능 평가*
+
+> NOTE: 표의 [4]는 실제 본논문에 나온 레퍼런스에 해당하는 순서이며 본포스트의 레퍼런스 [5]에 해당한다.
+>> - 3.5 Stacked binary networks
 
 ## Reference
 >[1] M. Courbariaux, Y. Bengio, and J.-P. David. Binaryconnect:
@@ -124,3 +144,7 @@ alignment with limited resources. In ICCV, 2017.
 >
 >[4] M. Rastegari, V. Ordonez, J. Redmon, and A. Farhadi. Xnornet:
 Imagenet classification using binary convolutional neural networks. In ECCV, 2016.
+>
+>[5] A. Bulat and Y. Tzimiropoulos. Hierarchical binary cnns for landmark localization with limited resources. IEEE Transactions on Pattern Analysis and Machine Intelligence, 2018.
+>
+>[6] M. Andriluka, L. Pishchulin, P. Gehler, and B. Schiele. 2d human pose estimation: New benchmark and state of the art analysis. In CVPR, 2014.
