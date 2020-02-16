@@ -116,7 +116,7 @@ $$ {d \over dx}\mathrm{tanh}(\lambda x) = \lambda\left(1 - \mathrm{tanh}^2(\lamb
 
 ## 결과
 
-![](/assets/img/2020-02-16-16-35-59.png){: width="0.5" height="0.5"}*테이블 1. MPII 데이터세트에 대한 제안 방법 평가*
+![](/assets/img/2020-02-16-16-35-59.png){: width="50%" height="auto"}*테이블 1. MPII 데이터세트에 대한 제안 방법 평가*
 
 
 > NOTE: 표의 [3]은 실제 본논문에 나온 레퍼런스(HourGlass)이다. 본 포스트의 레퍼런스의 순서와 다르다.
@@ -126,7 +126,7 @@ $$ {d \over dx}\mathrm{tanh}(\lambda x) = \lambda\left(1 - \mathrm{tanh}^2(\lamb
 >> - 3.4 Progressive binarization
 >> - 3.6 Binarization plus distillation
 
-![](/assets/img/2020-02-16-16-43-10.png){: width="0.5" height="0.5"}*테이블 2. 스택 개수에 따른 성능 평가*
+![](/assets/img/2020-02-16-16-43-10.png){: width="50%" height="auto"}*테이블 2. 스택 개수에 따른 성능 평가*
 
 > NOTE: 표의 [4]는 실제 본논문에 나온 레퍼런스에 해당하는 순서이며 본포스트의 레퍼런스 [5]에 해당한다.
 >> - 3.5 Stacked binary networks
