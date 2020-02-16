@@ -102,7 +102,7 @@ $$ {d \over dx}\mathrm{tanh}(\lambda x) = \lambda\left(1 - \mathrm{tanh}^2(\lamb
 
 ![](/assets/img/2020-02-16-15-43-11.png){: width="" height=""}*그림 7.*
 
-&nbsp;&nbsp;$$\lambda \to \infty$$로의 함수는 $$\mathrm{sgn}(x)$$로 수렴된다. 유사한 방식으로, 근사 함수의 미분은 Direac 함수 $$\sigma$$로 수렴된다. 실제로, 대부분의 특징(Features)는 근사 오차(approximation error)가 높은 지역 외부에 있음로(그림 6.), 저자들은 $$\lambda = 25$$에서 부터 이진에 가까운 결과를 관찰하기 시작했다(그림 7.).
+&nbsp;&nbsp;$$\lambda \to \infty$$로의 함수는 $$\mathrm{sgn}(x)$$로 수렴된다. 유사한 방식으로, 근사 함수의 미분은 Direac 함수 $$\epsilon$$로 수렴된다. 실제로, 대부분의 특징(Features)는 근사 오차(approximation error)가 높은 지역 외부에 있음로(그림 6.), 저자들은 $$\lambda = 25$$에서 부터 이진에 가까운 결과를 관찰하기 시작했다(그림 7.).
 
 &nbsp;&nbsp;저자들은 실험을 통해 모든 근사 함수가 비슷하게 동작하는것을 발겨하였고 그중 $$t\mathrm{tanh}(x)$$가 가장 높은 성능을 얻는다는 것을 확인했다. 따라서 저자들의 최종적인 결과는 $$t\mathrm{tanh}(x)$$를 이용하여 얻었다. 학습하는 동안 저자들은 $$\lambda$$의 값을 $$2^0$$에서 시작하여 $$2^16$$으로 점진적으로 증가시켜 실험하였다.
 
